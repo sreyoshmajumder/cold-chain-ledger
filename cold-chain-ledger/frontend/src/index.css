@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    /* Sets the deep premium dark background and smooth fonts */
+    @apply bg-slate-900 text-slate-50 antialiased;
+    margin: 0;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  /* Customizes the highlight color when you drag and select text */
+  ::selection {
+    @apply bg-emerald-500/30 text-emerald-200;
+  }
+
+  #root {
+    @apply min-h-screen flex flex-col;
+  }
+}
+
+@layer components {
+  /* Reusable class for premium card containers */
+  .glass-panel {
+    @apply bg-slate-800/80 backdrop-blur-md border border-slate-700/50 shadow-xl rounded-xl transition-all duration-300;
+  }
+}
+
+@layer utilities {
+  /* Custom Scrollbar for a polished, enterprise look */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-900;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-700 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-600;
+  }
+}
